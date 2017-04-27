@@ -1,0 +1,65 @@
+Compression may refer to:
+Contents
+
+    1 Physical science
+    2 Information science
+    3 Medicine
+    4 Other
+    5 See also
+
+Physical science
+
+    Compression (physics), the result of the subjection of a material to compressive stress
+    Compression member, a class of structural elements, of which a column is the most common specific example
+    Compressibility, a measure of volume change resulting from pressure
+    Gas compression, raising the pressure and reducing the volume of gases
+    Compression ratio, a figure of merit of an internal-combustion engine
+    Compression (geology), a system of forces that tend to decrease the volume of rocks
+    Compression strength or Compressive strength
+
+Information science
+
+    Data compression, the process of encoding digital information using fewer bits
+    Audio compression (data), the compression of digital audio streams and files
+    Bandwidth compression, a reduction in either the time to transmit or in the amount of bandwidth required to transmit
+    Compression artifact, noticeable defects in audio or video that has been compressed
+    Image compression, the application of data compression on digital images
+    Video compression, the compression of digital video streams and files
+    One-way compression function, a cryptographic primitive
+    Dynamic range compression, a compression process that reduces the dynamic range of an audio signal
+
+Medicine
+
+    Brain compression, a potentially fatal condition where pressure is exerted on the brain by internal bleeding
+    Compression bandage, a bandage that uses compression to reduce the flow of blood
+    Compression in pyelography, pressing on the lower abdominal area in intravenous pyelogram
+    Condensation (psychology) in Freudian psychology
+    Cold compression therapy, to alleviate the pain of minor injuries
+
+Other
+
+    Gain compression, in electronic amplifiers, a reduction in differential or slope gain resulting from device non-linearity
+    Compression (functional analysis), the restriction of an operator on a Hilbert space to a subspace, obtained by orthogonal projection
+    Compression (phonetics), running syllables together in informal speech
+    Compression (zoology), when an animal (or part of) is smaller compared with other animals in the same group, for example the Yellow jack
+
+See also
+
+    All pages beginning with "Compression"
+    All pages with titles containing Compression
+    Compaction (disambiguation)
+    Compress
+    Compression garment
+    Compressor (disambiguation)
+    Decompression (disambiguation)
+    Expansion (disambiguation)
+
+Disambiguation icon 	This disambiguation page lists articles associated with the title Compression.
+If an internal link led you here, you may wish to change the link to point directly to the intended article.
+
+
+
+
+
+
+
