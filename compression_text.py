@@ -1,15 +1,17 @@
 import string
 import operator
 import sys
+import os.path
 
+inputfile = sys.argv[1]
+outputfile = sys.argv[2]
 c = {}
 alphabet = ""
 outputText = ""
 outputDigrams = ""
-inputfile = sys.argv[1]
-outputfile = sys.argv[2]
 text = open(inputfile)
 digrams = []
+tri=""
 # Create a list of 2-character keys
 
 for i in range(33,47):
@@ -22,16 +24,32 @@ for i in alphabet :
         digrams.append(i+j)
 # Split text in trigrams
 while True:
-    t = text.read(3)
-# How many occurences of given trigram
-    if t in c:
-        c[t] += 1
-    else:
-        c[t] = 1
-
-    if not t:
-        print('end of File')
+    tri=""
+    letter = text.read(1)
+    if not letter:
+        print('end of File after full trigram')
         break
+    else:
+        letter2 = text.read(1)
+        tri=letter
+        if not letter2:
+            c[tri] = 1
+            print('end of File after one character as a key')
+            break
+        else:
+            letter3 = text.read(1)
+            tri+=letter2
+            if not letter3:
+                c[tri] = 1
+                print('end of File  after two characters as a key')
+                break
+            else:
+                tri+=letter3
+                if tri in c:
+                    c[tri] += 1
+                else:
+                    c[tri] = 1
+
 sorted_c = sorted(c.items(),key=operator.itemgetter(1), reverse=True)
 
 print(len(c),">",len(digrams))
@@ -44,7 +62,6 @@ for i in range(10):
 for i in range(10,len(c)):
     c[sorted_c[i][0]] = digrams[i-10]
     outputDigrams += sorted_c[i][0]
-
 text = open(inputfile)
 while True:
     t = text.read(3)
@@ -53,7 +70,7 @@ while True:
     if not t:
         break
 
-nbKeys = str(len(c))
+nbKeys = str((len(c)-1)*3 + len(c[tri]))
 while len(nbKeys) < 8:
     nbKeys = "0" + nbKeys
 
@@ -61,3 +78,11 @@ with open(outputfile,'wb') as text:
     text.write(nbKeys.encode('utf8'))
     text.write(outputDigrams.encode('utf8'))
     text.write(outputText.encode('utf8'))
+
+def output_exists():
+    test = os.path.isfile(outputfile)
+    if test:
+        print("Output file '", outputfile ,"' has been created")
+    else:
+        print("A problem might have occured")
+output_exists()

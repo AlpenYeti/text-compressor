@@ -2,16 +2,17 @@
 # python decompression_text.py <fichier à décompresser> <fichier de sortie>
 import sys
 import string
+import os.path
 
-c = {}
-outputText = ""
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
+c = {}
+outputText = ""
 text = open(inputfile,'r')
 nbTrig = 0 # nombre de trigrammes dans le texte
 specChars = ""
 alphabet = ""
-digrams = []
+digrams = ['0','1','2','3','4','5','6','7','8','9']
 
 for i in range(33,47):
     alphabet += chr(i)
@@ -25,27 +26,22 @@ for i in alphabet :
 # print(digrams)
 # récupérer les 8 premiers caractères et les int-ify => Longueur de la chaîne de trigrammes
 nbTrig = int(text.read(8)) # 8 premiers = nombre de clés
-mostFr = text.read(10*3) # 30 suivants = 10 trigrammes les plus fréquents
-otKeys = text.read(nbTrig*3-len(mostFr)) # nbKeys-30 suivants = autres trigrammes
+otKeys = text.read(nbTrig) # nbKeys-30 suivants = autres trigrammes
 textCo = text.read() # tout le reste = à décrypter
 
 # recréer les trigrammes
 # Associate each trigram with a key
 w=0
 n=3
-for i in range(0, len(mostFr), n):
-    c[str(w)] = mostFr[i:i+n]
-    w+=1
 
-w=0
 for i in range(0,len(otKeys),n):
     c[digrams[w]] = otKeys[i:i+n]
     w+=1
+
 # c = {j:mostFr[i:i+n] for i in range(0, len(mostFr), n) for j in range(10)}
 # d = {digrams[j]:otKeys[i:i+n] for i in range(0, len(otKeys), n) for j in range(len(otKeys))}
 # dico = {**c, **d}
 # c[str(i)] = t
-
 skip = False
 for i in range(len(textCo)):
     if skip:
@@ -64,3 +60,11 @@ for i in range(len(textCo)):
 print("Decompression finished")
 with open(outputfile,'w') as text:
     text.write(outputText)
+
+def output_exists():
+    test = os.path.isfile(outputfile)
+    if test:
+        print("Output file '", outputfile ,"' has been created")
+    else:
+        print("A problem might have occured")
+output_exists()
